@@ -24,9 +24,9 @@ runs:
           echo '${{ steps.versions.outputs.cumulusci-version }}' > actions-cci-version.txt
         shell: bash
       - name: Set Up Node 
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: npm
           cache-dependency-path: actions-sfdx-version.txt
       - name: Install sfdx
@@ -34,9 +34,9 @@ runs:
           npm install -g 'sfdx-cli@${{ steps.versions.outputs.sfdx-version }}'
         shell: bash
       - name: Set Up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
           cache: pip
           cache-dependency-path: actions-cci-version.txt
       - name: Install CumulusCI
