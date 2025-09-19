@@ -31,7 +31,7 @@ runs:
           cache-dependency-path: actions-sfdx-version.txt
       - name: Install sfdx
         run: |
-          npm install -g 'sfdx-cli@${{ steps.versions.outputs.sfdx-version }}'
+          npm install -g '@salesforce/cli@${{ steps.versions.outputs.sfdx-version }}'
         shell: bash
       - name: Set Up Python
         uses: actions/setup-python@v5
